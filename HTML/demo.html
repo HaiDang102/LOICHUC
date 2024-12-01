@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Tốt Nghiệp!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('../JMG/background.webp');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* Banner Style */
+        
+        .banner {
+            width: 100%;
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            animation: banner-slide 3s ease-in-out infinite;
+        }
+        
+        @keyframes banner-slide {
+            0% {
+                transform: translateY(-100%);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+        
+        h1 {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 80px;
+            /* Adjust for the banner */
+            margin-bottom: 20px;
+            color: #f3e99d;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .carousel-container {
+            width: 80%;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        
+        .carousel img {
+            width: 500%;
+            height: 700px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btnXemTatCa {
+            padding: 10px 20px;
+            background-color: #f3e99d;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .btnXemTatCa:hover {
+            background-color: #ffdf70;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Banner -->
+    <div class="banner">
+        <span>🎓 CHÚC MỪNG CHỊ TỐT NGHIỆP  🎉</span>
+    </div>
+
+    <h1>Chúc Mừng Tốt Nghiệp!</h1>
+
+    <!-- Image Carousel -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="../JMG/hinh1.jpg" alt="Image 1">
+
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="loichuc.html" class="btnXemTatCa">BẤM TIẾP ĐI </a>
+    </footer>
+
+    <script>
+        // Lấy các phần tử cần thiết
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const carousel = document.querySelector('.carousel');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        // Cập nhật carousel khi thay đổi ảnh
+        function updateCarousel() {
+            const width = images[0].clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+
+
+        // Tạo vòng lặp tự động chuyển ảnh mỗi 3 giây
+        setInterval(() => {
+            moveToNext();
+        }, 3000); // Thời gian chuyển ảnh là 3 giây
+
+        // Sự kiện khi nhấn nút trước
+        prevBtn.addEventListener('click', moveToPrevious);
+
+        // Sự kiện khi nhấn nút tiếp theo
+        nextBtn.addEventListener('click', moveToNext);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Chúc với Image Carousel</title>
+    <!-- Liên kết tới Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            width: 190vh;
+            background-image: url('../JMG/back2.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 40px;
+        }
+        
+        .carousel-container {
+            width: 70%;
+            max-width: 700px;
+            height: 700px;
+            /* Đặt chiều cao cố định cho carousel */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-inner img:hover {
+            transform: scale(1.1);
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .carousel-item:hover .carousel-caption {
+            opacity: 1;
+        }
+        
+        .right {
+            flex: 1;
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            transition: opacity 0.5s ease;
+        }
+        
+        .right h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .right p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        /* Hiệu ứng fade-in */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .new-image {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        
+        .new-image:hover {
+            transition: transform 0.3s ease-in;
+        }
+        
+        .new-note {
+            font-style: italic;
+            color: pink;
+            background-color: gray;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Phần carousel ảnh -->
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade carousel-container" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../JMG/hinh1.jpg" class="d-block w-100" alt="Hình 1">
+                    <div class="carousel-caption">
+                        <p>Chúc chị một ngày thật tuyệt vời!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../JMG/hinh2.jpg" class="d-block w-100" alt="Hình 2">
+                    <div class="carousel-caption">
+                        <p>Mong rằng chị sẽ luôn gặp may mắn!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../JMG/hinh4.jpg" class="d-block w-100" alt="Hình 4">
+                    <div class="carousel-caption">
+                        <p>Chúc chị luôn thành công trong cuộc sống!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../JMG/hinh5.jpg" class="d-block w-100" alt="Hình 5">
+                    <div class="carousel-caption">
+                        <p>Hãy luôn mạnh mẽ và hạnh phúc!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../JMG/chiem4.jpg" class="d-block w-100" alt="Hình 5" width="100%">
+                    <div class="carousel-caption">
+                        <p>Hãy luôn mạnh mẽ và hạnh phúc!</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="../JMG/hinh6.jpg" class="d-block w-100" alt="Hình 6">
+                    <div class="carousel-caption">
+                        <p>Chúc chị những điều tốt đẹp nhất!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Các điều khiển carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Phần lời chúc -->
+        <div class="right">
+            <h2>Ms.Thảo </h2>
+            <p>
+                Chúc chị một ngày thật tuyệt vời và đầy niềm vui! Mong rằng chị sẽ luôn gặp may mắn và thành công trong mọi việc chị làm. Hãy tiếp tục vững bước và không ngừng phấn đấu!
+            </p>
+            <p>
+                “Tốt nghiệp không phải là kết thúc, mà là sự khởi đầu của một cuộc phiêu lưu mới. Chúc Chị luôn dũng cảm và sẵn sàng khám phá những điều tuyệt vời đang chờ đón.”
+            </p>
+
+            <!-- Thêm ảnh và ghi chú mới -->
+            <img src="../JMG/chiem1.jpg" alt="Ảnh mới" class="new-image">
+            <p class="new-note">Chúc Chị thành công với những dự định sắp tới, một chặng đường mới đang mở ra!</p>
+            <p style=" color: black;">Em rất biết ơn thời gian đã cho chị em mình gặp nhau,đồng hành làm việc cùng chị. Hiện tại định hướng công việc khác nhau, nên không còn cuộc gặp gỡ nhau nhiều như trước nhưng tình cảm chị em vẫn còn vậy. </p>
+            <p style="color: black;">Dù thế nào thì em rất quý chị.Em xem chị như chị của em. Em mong chị luôn khỏe mạnh,thành công và hạnh phúc nha ! </p>
+            <p> Chị của em, Yêu Chị! </p>
+            <h5> NGUYỄN HẢI ĐĂNG</h5>
+            <br>
+
+
+        </div>
+    </div>
+
+    <!-- Liên kết tới Bootstrap JS và Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
